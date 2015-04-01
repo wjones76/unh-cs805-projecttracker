@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ProjectTracker</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+    <div id="main-container" class="container">
+        <div id="header">
+            <h1>Project Tracker v0.0.1.0</h1>
+            <p class="sample">A simple project tracker for everyday use!</p>
+        </div>
+		<div class="row">
+		  <div id="sidebar" class="col-xs-3">
+		    <ul>
+			  <li><%= link_to 'User Profiles', userprofiles_path %></li>
+			  <li>Administration
+			    <ul>
+			      <li><%= link_to 'Status', statuses_path %></li>
+  			      <li><%= link_to 'Priority', priorities_path %></li>
+			      <li><%= link_to 'Department', departments_path %></li>
+			    </ul>
+			  </li>
+	        </ul>
+		  </div>
+          <div id="content" class="col-xs-9">
+            <% if alerted = alert %>
+                <p id="alert"><%= alerted %></p>
+            <% end %>
+            <%= yield %>
+          </div>
+		</div>
+		<div id="footer">
+         	<p>
+				Footer stuff goes here
+			</p>
+			</div>
+		</div>
+    </div>
+</body>
+</html>

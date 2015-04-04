@@ -1,0 +1,230 @@
+﻿body {
+    /*padding-top: 50px;*/
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.workflowTable {
+    border: 1px solid black;
+}
+
+.workflowTable th {
+    color: #274F80 !important;
+    font-size: .9em;
+    border: 1px solid black;
+    padding: 3px;
+
+}
+
+.workflowTable tr:nth-child(even) {
+    background-color: whitesmoke;
+
+}
+
+.workflowTable td {
+    font-size: .9em;
+    border: 1px solid black;
+    text-align: center;
+    padding: 3px;
+}
+
+.table-commission th {
+    color: #FFF !important;
+    background-color: #274F80 !important;
+    text-align: center;
+}
+
+.table-commission td {
+    white-space: nowrap;
+}
+
+.floatLeft {
+    float:left;
+}
+
+.floatRight {
+    float: right;
+}
+
+.displayBlock {
+    display:block;
+}
+
+.display-inline-block {
+    display: inline-block;
+}
+
+.width100pct {
+    width:100% !important;
+}
+
+.width200 {
+    width:200px !important;
+}
+
+.width80 {
+    width:80px !important;
+}
+
+.width100 {
+        width:100px !important;
+}
+
+.width100pct {
+        width:100% !important;
+}
+
+.width450 {
+    width: 530px !important;
+}
+
+.textRed {
+    color: red;
+}
+
+.textRight {
+    text-align:right;
+}
+
+.backgroundGrey {
+    background-color: whitesmoke;
+}
+
+.field-validation-valid
+{
+    display: none;
+}
+.validation-summary-valid
+{
+    display: none;
+}
+
+.roundCorners10 {
+    border-radius: 10px;
+}
+
+.employeeProfile {
+    font-size: .8em;
+    list-style-type: none;
+    color: white;
+}
+
+.workflowlogentries {
+    width: 500px;
+
+}
+
+.workflowlogentries td {
+    font-size: .8em;
+}
+
+.logentrydiv {
+    float:right;
+    position: absolute;
+    left: 50%;
+    top: 150px;
+}
+
+
+.themeBackground
+{
+    background-color: #274F80 !important;
+}
+
+.themeFontColor {
+        color: white !important;
+}
+.themeFontColor a {
+        color: white !important;
+}
+.themeFontColor a:hover {
+    color: lightgray  !important;
+}
+
+.appNameHeader {
+    font-size: 2.1em;
+    margin-top: 20px;
+    line-height: 1em; 
+}
+
+.noborder {
+    border: none !important;
+}
+
+.nomargin {
+    margin: 0px !important;
+}
+
+.nowrap {
+        white-space: nowrap;
+}
+
+.no-padding {
+    padding: 0px !important;
+}
+
+.backgroundBlack {
+    background-color: black !important;
+}
+
+.backgroundWhite {
+        background-color: white !important;
+}
+
+.backgroundTransparent {
+    background-color: transparent;
+}
+
+.goalHeading {
+            background-color: #274F80 !important;
+            color: #FFF !important;
+            height: 45px;
+}
+
+.factorEditor {
+    border: 2px solid GrayText ;
+            border-radius:5px;
+    width:50px;
+}
+.goalEditor {
+        border: 2px solid gold ;
+        border-radius:5px;
+    width:50px;
+}
+
+.goalTable {
+    /*border: 1px solid black;*/
+    width: 650px;
+}
+
+.goalTable th {
+    font-size: .9em;
+    border: 1px solid black;
+    font-weight: normal !important;
+    padding: 3px;
+
+}
+
+
+.goalTable td {
+    font-size: .9em;
+    border: 1px solid black;
+    text-align: center;
+    padding: 3px;
+}
+
+.add-percent:after {
+    content:"%" !important;
+}

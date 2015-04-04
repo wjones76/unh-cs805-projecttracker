@@ -25,7 +25,8 @@ class UserprofilesController < ApplicationController
   # GET /userprofiles/new.json
   def new
     @userprofile = Userprofile.new
-
+    @department_options = Department.all.map{|u| [ u.department, u.id ] }
+	
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @userprofile }

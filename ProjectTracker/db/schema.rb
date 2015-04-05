@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150329153348) do
+ActiveRecord::Schema.define(:version => 20150404215735) do
 
   create_table "categories", :force => true do |t|
     t.string   "category",   :limit => 30
@@ -37,6 +37,48 @@ ActiveRecord::Schema.define(:version => 20150329153348) do
 
   add_index "priorities", ["priority"], :name => "index_priorities_on_priority", :unique => true
 
+  create_table "project_tasks", :force => true do |t|
+    t.integer  "project_id"
+    t.integer  "task_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "project_tasks", ["project_id"], :name => "index_project_tasks_on_project_id"
+  add_index "project_tasks", ["task_id"], :name => "index_project_tasks_on_task_id"
+
+  create_table "projects", :force => true do |t|
+    t.string   "project_name",         :limit => 120
+    t.integer  "department_id"
+    t.text     "description"
+    t.text     "return_on_investment"
+    t.string   "submitted_by",         :limit => 20
+    t.integer  "status_id"
+    t.datetime "created_on"
+    t.integer  "version_id"
+    t.integer  "category_id"
+    t.datetime "deliver_date"
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
+  end
+
+  add_index "projects", ["category_id"], :name => "index_projects_on_category_id"
+  add_index "projects", ["department_id"], :name => "index_projects_on_department_id"
+  add_index "projects", ["project_name"], :name => "index_projects_on_project_name", :unique => true
+  add_index "projects", ["status_id"], :name => "index_projects_on_status_id"
+  add_index "projects", ["version_id"], :name => "index_projects_on_version_id"
+
+  create_table "roles", :force => true do |t|
+    t.string   "role_name",   :limit => 50
+    t.text     "description"
+    t.string   "created_by"
+    t.datetime "created_on"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+  end
+
+  add_index "roles", ["role_name"], :name => "index_roles_on_role_name", :unique => true
+
   create_table "statuses", :force => true do |t|
     t.string   "status",     :limit => 30
     t.datetime "created_at",               :null => false
@@ -44,6 +86,35 @@ ActiveRecord::Schema.define(:version => 20150329153348) do
   end
 
   add_index "statuses", ["status"], :name => "index_statuses_on_status", :unique => true
+
+  create_table "tasks", :force => true do |t|
+    t.string   "task_name",   :limit => 120
+    t.text     "description"
+    t.integer  "priority_id"
+    t.string   "assigned_to", :limit => 20
+    t.integer  "category_id"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.string   "version",     :limit => 20
+    t.integer  "status_id"
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+  end
+
+  add_index "tasks", ["category_id"], :name => "index_tasks_on_category_id"
+  add_index "tasks", ["priority_id"], :name => "index_tasks_on_priority_id"
+  add_index "tasks", ["status_id"], :name => "index_tasks_on_status_id"
+
+  create_table "user_profile_roles", :force => true do |t|
+    t.integer  "role_id"
+    t.integer  "userprofile_id"
+    t.datetime "created_on"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "user_profile_roles", ["role_id"], :name => "index_user_profile_roles_on_role_id"
+  add_index "user_profile_roles", ["userprofile_id"], :name => "index_user_profile_roles_on_userprofile_id"
 
   create_table "userprofiles", :force => true do |t|
     t.string   "first_name",    :limit => 30
@@ -67,5 +138,20 @@ ActiveRecord::Schema.define(:version => 20150329153348) do
     t.datetime "created_at",                 :null => false
     t.datetime "updated_at",                 :null => false
   end
+
+  create_table "workflows", :force => true do |t|
+    t.string   "workflow_name", :limit => 50
+    t.integer  "department_id"
+    t.text     "description"
+    t.string   "created_by"
+    t.integer  "status_id"
+    t.datetime "created_on"
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
+
+  add_index "workflows", ["department_id"], :name => "index_workflows_on_department_id"
+  add_index "workflows", ["status_id"], :name => "index_workflows_on_status_id"
+  add_index "workflows", ["workflow_name"], :name => "index_workflows_on_workflow_name", :unique => true
 
 end

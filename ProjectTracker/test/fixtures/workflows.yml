@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  workflow_name: MyString
+  department: 
+  description: MyText
+  created_by: MyString
+  status: 
+  created_on: 2015-04-04 17:56:38
+
+two:
+  workflow_name: MyString
+  department: 
+  description: MyText
+  created_by: MyString
+  status: 
+  created_on: 2015-04-04 17:56:38

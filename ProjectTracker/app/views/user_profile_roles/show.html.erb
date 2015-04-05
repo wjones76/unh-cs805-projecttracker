@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Role:</b>
+  <%= @user_profile_role.role %>
+</p>
+
+<p>
+  <b>Userprofile:</b>
+  <%= @user_profile_role.userprofile %>
+</p>
+
+<p>
+  <b>Created on:</b>
+  <%= @user_profile_role.created_on %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_profile_role_path(@user_profile_role) %> |
+<%= link_to 'Back', user_profile_roles_path %>

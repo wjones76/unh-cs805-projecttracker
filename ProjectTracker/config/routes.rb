@@ -1,4 +1,22 @@
 ProjectTracker::Application.routes.draw do
+  resources :project_tasks
+
+
+  resources :user_profile_roles
+
+
+  resources :roles
+
+
+  resources :workflows
+
+
+  resources :tasks
+
+
+  resources :projects
+
+
   resources :userprofiles
 
 

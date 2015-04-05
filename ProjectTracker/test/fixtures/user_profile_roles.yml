@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  role: 
+  userprofile: 
+  created_on: 2015-04-04 17:57:24
+
+two:
+  role: 
+  userprofile: 
+  created_on: 2015-04-04 17:57:24

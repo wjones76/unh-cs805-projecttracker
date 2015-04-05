@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Workflow name:</b>
+  <%= @workflow.workflow_name %>
+</p>
+
+<p>
+  <b>Department:</b>
+  <%= @workflow.department.department %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @workflow.description %>
+</p>
+
+<p>
+  <b>Created by:</b>
+  <%= @workflow.created_by %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @workflow.status.status %>
+</p>
+
+<p>
+  <b>Created on:</b>
+  <%= @workflow.created_on %>
+</p>
+
+
+<%= link_to 'Edit', edit_workflow_path(@workflow) %> |
+<%= link_to 'Back', workflows_path %>

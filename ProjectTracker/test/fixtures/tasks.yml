@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  task_name: MyString
+  description: MyText
+  priority: 
+  assigned_to: MyString
+  category: 
+  start_date: 2015-04-04
+  end_date: 2015-04-04
+  version: MyString
+  status: 
+
+two:
+  task_name: MyString
+  description: MyText
+  priority: 
+  assigned_to: MyString
+  category: 
+  start_date: 2015-04-04
+  end_date: 2015-04-04
+  version: MyString
+  status: 

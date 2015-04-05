@@ -25,7 +25,6 @@ class UserprofilesController < ApplicationController
   # GET /userprofiles/new.json
   def new
     @userprofile = Userprofile.new
-    @department_options = Department.all.map{|u| [ u.department, u.id ] }
 	
     respond_to do |format|
       format.html # new.html.erb
@@ -42,7 +41,8 @@ class UserprofilesController < ApplicationController
   # POST /userprofiles.json
   def create
     @userprofile = Userprofile.new(params[:userprofile])
-
+    @userprofile.created_on = Time.now
+	
     respond_to do |format|
       if @userprofile.save
         format.html { redirect_to @userprofile, notice: 'Userprofile was successfully created.' }

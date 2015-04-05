@@ -1,0 +1,31 @@
+<h1>Listing workflows</h1>
+
+<table>
+  <tr>
+    <th>Workflow name</th>
+    <th>Department</th>
+    <th>Description</th>
+    <th>Created by</th>
+    <th>Status</th>
+    <th>Created on</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @workflows.each do |workflow| %>
+  <tr>
+    <td><%= link_to workflow.workflow_name, workflow %></td>
+    <td><%= workflow.department.department %></td>
+    <td><%= workflow.description %></td>
+    <td><%= workflow.created_by %></td>
+    <td><%= workflow.status.status %></td>
+    <td><%= workflow.created_on %></td>
+    <td><%= link_to 'Edit', edit_workflow_path(workflow) %></td>
+    <td><%= link_to 'Destroy', workflow, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Workflow', new_workflow_path %>

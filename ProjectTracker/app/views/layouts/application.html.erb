@@ -11,26 +11,31 @@
         <div id="header">
             <h1>Project Tracker v0.0.1.0</h1>
             <p class="sample">A simple project tracker for everyday use!</p>
-        </div>
-		<div class="row">
-		  <div id="sidebar" class="col-xs-3">
-		    <ul>
+        <div class="row">
+		  <nav>
+		    <ul class="nav navbar-nav">
+			  <li><%= link_to 'Projects', projects_path %></li>
+			  <li><%= link_to 'Tasks', tasks_path %></li>
 			  <li><%= link_to 'User Profiles', userprofiles_path %></li>
 			  <li>Administration
 			    <ul>
 			      <li><%= link_to 'Status', statuses_path %></li>
   			      <li><%= link_to 'Priority', priorities_path %></li>
 			      <li><%= link_to 'Department', departments_path %></li>
+				  <li><%= link_to 'Category', categories_path %></li>
+				  <li><%= link_to 'Version', versions_path %></li>
+				  <li><%= link_to 'Role', roles_path %></li>
 			    </ul>
 			  </li>
 	        </ul>
-		  </div>
-          <div id="content" class="col-xs-9">
+	      </nav>
+		</div>
+		</div>
+		<div id="content" class="col-xs-12" style="height:400px;">
             <% if alerted = alert %>
                 <p id="alert"><%= alerted %></p>
             <% end %>
             <%= yield %>
-          </div>
 		</div>
 		<div id="footer">
          	<p>

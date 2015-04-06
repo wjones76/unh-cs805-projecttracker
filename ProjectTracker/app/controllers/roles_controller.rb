@@ -41,6 +41,7 @@ class RolesController < ApplicationController
   # POST /roles.json
   def create
     @role = Role.new(params[:role])
+    @role.created_on = Time.now
 
     respond_to do |format|
       if @role.save

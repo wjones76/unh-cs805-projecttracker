@@ -1,37 +1,25 @@
 <h1>Listing projects</h1>
 
-<table>
+<table class="defaultTable">
   <tr>
     <th>Project name</th>
     <th>Department</th>
-    <th>Description</th>
-    <th>Return on investment</th>
     <th>Submitted by</th>
     <th>Status</th>
-    <th>Created on</th>
     <th>Version</th>
-    <th>Category</th>
-    <th>Deliver date</th>
-    <th></th>
-    <th></th>
     <th></th>
   </tr>
 
 <% @projects.each do |project| %>
   <tr>
-    <td><%= project.project_name %></td>
-    <td><%= project.department %></td>
-    <td><%= project.description %></td>
-    <td><%= project.return_on_investment %></td>
+    <td><%= link_to project.project_name , project %></td>
+    <td><%= project.department.department %></td>
     <td><%= project.submitted_by %></td>
-    <td><%= project.status %></td>
-    <td><%= project.created_on %></td>
-    <td><%= project.version %></td>
-    <td><%= project.category %></td>
-    <td><%= project.deliver_date %></td>
-    <td><%= link_to 'Show', project %></td>
-    <td><%= link_to 'Edit', edit_project_path(project) %></td>
-    <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= project.status.status %></td>
+    <td><%= project.version.version_name %></td>
+    <td>
+      <%= link_to 'Edit', edit_project_path(project) %> | <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </td>
   </tr>
 <% end %>
 </table>

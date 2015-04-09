@@ -32,3 +32,27 @@
 
 #user Profile
    Userprofile.find_or_create_by_nt_login(:nt_login => 'WJONES', :first_name => 'Bill', :last_name => 'Jones', :department_id => 2, :phone_number => '(603) 123-1234', :email => 'wjones@unh.edu', :job_title => 'Lead Developer', :created_on => Time.now)
+   Userprofile.find_or_create_by_nt_login(:nt_login => 'ASMITH', :first_name => 'Adam', :last_name => 'Smith', :department_id => 1, :phone_number => '(603) 113-1234', :email => 'asmith@unh.edu', :job_title => 'Project Manager', :created_on => Time.now)
+
+#category
+   Category.find_or_create_by_category(:category => 'Administration')
+   Category.find_or_create_by_category(:category => 'Requirement')
+
+#version
+Version.find_or_create_by_project_id(:id => 1, :project_id => 1, :version_name => '1.0.0.0')
+
+#role
+  Role.find_or_create_by_role_name(:role_name => 'Business Owner', :created_by => 'WJONES', :created_on => Time.now, :description => 'Person responsible for business decisions for the department')
+  Role.find_or_create_by_role_name(:role_name => 'IT Manager', :created_by => 'WJONES', :created_on => Time.now, :description => 'IT Manager responsible for assigning work')
+  Role.find_or_create_by_role_name(:role_name => 'Developer', :created_by => 'WJONES', :created_on => Time.now, :description => 'Person responsible for doing the work')
+  Role.find_or_create_by_role_name(:role_name => 'QC Analyst', :created_by => 'WJONES', :created_on => Time.now, :description => 'Person responsible for testing the changes')
+  Role.find_or_create_by_role_name(:role_name => 'Business Analyst', :created_by => 'WJONES', :created_on => Time.now, :description => 'Person responsible for creating the requirements')
+
+#project
+Project.find_or_create_by_project_name(:project_name => 'Project Tracker for IT Work',
+                                       :created_on => Time.now, :deliver_date => nil,
+                                       :description => "We need a tool that allows the anyone in the business to submit a request, the department's manager can approve or deny, then the IT manager can assign and then the developer can work the tasks in the project. ", :return_on_investment => '',
+                                       :submitted_by => 'WJONES', :department_id => 1, :version_id => 1, :status_id=> 1, :category_id => 1)
+
+#task
+

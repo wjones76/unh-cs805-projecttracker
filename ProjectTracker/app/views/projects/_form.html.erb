@@ -36,8 +36,8 @@
     <%= f.collection_select(:status_id, Status.all, :id, :status, prompt:true) %>
   </div>
   <div class="field">
-    <%= f.label :version %><br />
-    <%= f.collection_select(:version_id, Version.all, :id, :version, prompt:true) %>
+    <%= f.label :version_name %><br />
+    <%= f.collection_select(:version_id, Version.where("project_id = ?", params[:id]), :id, :version_name, prompt:true) %>
   </div>
   <div class="field">
     <%= f.label :category %><br />

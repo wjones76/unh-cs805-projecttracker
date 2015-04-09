@@ -5,17 +5,13 @@
     <th>Id</th>
     <th>Priority</th>
     <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @priorities.each do |priority| %>
   <tr>
     <td><%= priority.id %></td>
-    <td><%= priority.priority %></td>
-    <td><%= link_to 'Show', priority %></td>
-    <td><%= link_to 'Edit', edit_priority_path(priority) %></td>
-    <td><%= link_to 'Destroy', priority, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to priority.priority, priority %></td>
+    <td><%= link_to 'Edit', edit_priority_path(priority) %> | <%= link_to 'Destroy', priority, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>

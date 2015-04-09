@@ -6,18 +6,14 @@
     <th>Version name</th>
     <th>Project</th>
     <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @versions.each do |version| %>
   <tr>
     <td><%= version.id %></td>
-    <td><%= version.version_name %></td>
+    <td><%= link_to version.version_name, version %></td>
     <td><%= version.project_id %></td>
-    <td><%= link_to 'Show', version %></td>
-    <td><%= link_to 'Edit', edit_version_path(version) %></td>
-    <td><%= link_to 'Destroy', version, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Edit', edit_version_path(version) %> | <%= link_to 'Destroy', version, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>

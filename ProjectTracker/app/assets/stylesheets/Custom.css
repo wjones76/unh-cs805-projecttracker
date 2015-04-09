@@ -1,0 +1,6 @@
+.defaultTable > th,tr,td {
+    padding: 10px;
+    margin: 5px;
+    border: solid 1px #000000;
+    background-color: lavender;
+}

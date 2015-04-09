@@ -121,7 +121,7 @@ ActiveRecord::Schema.define(:version => 20150404215735) do
     t.string   "last_name",     :limit => 30
     t.string   "nt_login",      :limit => 20
     t.integer  "department_id"
-    t.text     "phone_number",  :limit => 20
+    t.string   "phone_number",  :limit => 20
     t.string   "email",         :limit => 80
     t.string   "job_title",     :limit => 30
     t.datetime "created_on"

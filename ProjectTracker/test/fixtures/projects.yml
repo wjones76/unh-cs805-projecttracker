@@ -1,25 +1,25 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  project_name: MyString
-  department: 
-  description: MyText
-  return_on_investment: MyText
-  submitted_by: MyString
-  status: 
+  project_name: Project 1
+  department: 1
+  description: TEST Description
+  return_on_investment: $1.00
+  submitted_by: WJONES
+  status: 1
   created_on: 2015-04-04 17:55:14
-  version: 
-  category: 
+  version: 1
+  category: 1
   deliver_date: 2015-04-04 17:55:14
 
 two:
-  project_name: MyString
-  department: 
+  project_name: Project 2
+  department: 2
   description: MyText
   return_on_investment: MyText
   submitted_by: MyString
-  status: 
+  status: 2
   created_on: 2015-04-04 17:55:14
-  version: 
-  category: 
+  version: 2
+  category: 2
   deliver_date: 2015-04-04 17:55:14

@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  project: 
-  task: 
+  project: 1
+  task: 1
 
 two:
-  project: 
-  task: 
+  project: 1
+  task: 1

@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  role: 
-  userprofile: 
+  role: 1
+  userprofile: 1
   created_on: 2015-04-04 17:57:24
 
 two:
-  role: 
-  userprofile: 
+  role: 2
+  userprofile: 2
   created_on: 2015-04-04 17:57:24

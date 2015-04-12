@@ -2,16 +2,16 @@
 
 one:
   workflow_name: MyString
-  department: 
+  department: 1
   description: MyText
   created_by: MyString
-  status: 
+  status: 1
   created_on: 2015-04-04 17:56:38
 
 two:
   workflow_name: MyString
-  department: 
+  department: 2
   description: MyText
   created_by: MyString
-  status: 
+  status: 2
   created_on: 2015-04-04 17:56:38

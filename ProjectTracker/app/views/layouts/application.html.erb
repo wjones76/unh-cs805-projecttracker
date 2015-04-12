@@ -40,23 +40,21 @@
               </nav>
             </div>
 		</div>
-		<div id="content" class="col-xs-12" style="height:400px;">
+		<div id="content" class="col-xs-12" style="min-height:400px;">
             <% if alerted = alert %>
                 <p id="alert"><%= alerted %></p>
             <% end %>
             <%= yield %>
 		</div>
-          <div>
-            <footer id="footer">
+        <div id="footer">
               <div id="footerLinks">
                   <ul class="footer-links">
                     <li>&copy 2015 Bill and Dan</li>
                     <li>About</li>
                     <li>Contact</li>
                   </ul>
-            </footer>
+              </div>
           </div>
-      </div>
     </div>
 </body>
 </html>

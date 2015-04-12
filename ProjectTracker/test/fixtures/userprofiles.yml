@@ -1,22 +1,22 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  id: 
-  first_name: MyString
+  id: 1
+  first_name: Bill
   last_name: MyString
   nt_login: MyString
-  department: 
+  department: 1
   phone_number: MyText
   email: MyString
   job_title: MyString
   created_on: 2015-03-29 11:33:48
 
 two:
-  id: 
-  first_name: MyString
+  id: 2
+  first_name: Dan
   last_name: MyString
   nt_login: MyString
-  department: 
+  department: 2
   phone_number: MyText
   email: MyString
   job_title: MyString

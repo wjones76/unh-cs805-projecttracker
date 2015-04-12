@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  id: 
-  priority: MyString
+  id: 1
+  priority: Low
 
 two:
-  id: 
-  priority: MyString
+  id: 2
+  priority: High

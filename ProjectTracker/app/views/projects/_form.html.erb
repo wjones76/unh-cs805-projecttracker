@@ -1,53 +1,102 @@
 <%= form_for(@project) do |f| %>
-  <% if @project.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+    <% if @project.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
 
-      <ul>
-      <% @project.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+          <ul>
+            <% @project.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <%= f.label :project_name %>
+      </div>
+      <div class="col-sm-10">
+        <%= f.text_field :project_name %>
+      </div>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :project_name %><br />
-    <%= f.text_field :project_name %>
-  </div>
-  <div class="field">
-    <%= f.label :department %><br />
-    <%= f.collection_select(:department_id, Department.all, :id, :department, prompt:true) %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :return_on_investment %><br />
-    <%= f.text_area :return_on_investment %>
-  </div>
-  <div class="field">
-    <%= f.label :submitted_by %><br />
-    <%= f.text_field :submitted_by %>
-  </div>
-  <div class="field">
-    <%= f.label :status %><br />
-    <%= f.collection_select(:status_id, Status.all, :id, :status, prompt:true) %>
-  </div>
-  <div class="field">
-    <%= f.label :version_name %><br />
-    <%= f.collection_select(:version_id, Version.where("project_id = ?", params[:id]), :id, :version_name, prompt:true) %>
-  </div>
-  <div class="field">
-    <%= f.label :category %><br />
-    <%= f.collection_select(:category_id, Category.all, :id, :category, prompt:true) %>
-  </div>
-  <div class="field">
-    <%= f.label :deliver_date %><br />
-    <%= f.datetime_select :deliver_date %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="row">
+      <div class="col-sm-2">
+        <%= f.label :department %>
+      </div>
+      <div class="col-sm-10">
+        <%= f.collection_select(:department_id, Department.all, :id, :department, prompt: true) %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <%= f.label :description %>
+      </div>
+      <div class="col-sm-10">
+        <%= f.text_area :description, :cols => 80, :rows => 6 %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <%= f.label :return_on_investment %>
+      </div>
+      <div class="col-sm-10">
+        <%= f.text_area :return_on_investment, :cols => 80, :rows => 3 %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <%= f.label :submitted_by %>
+      </div>
+      <div class="col-sm-10">
+        <%= f.text_field :submitted_by %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <%= f.label :status %>
+      </div>
+      <div class="col-sm-10">
+        <%= f.collection_select(:status_id, Status.all, :id, :status, prompt: true) %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <%= f.label :version_name %>
+      </div>
+      <div class="col-sm-10">
+        <%= f.collection_select(:version_id, Version.where("project_id = ?", params[:id]), :id, :version_name, prompt: true) %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <%= f.label :category %>
+      </div>
+      <div class="col-sm-10">
+        <%= f.collection_select(:category_id, Category.all, :id, :category, prompt: true) %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <%= f.label :deliver_date %>
+      </div>
+      <div class="col-sm-10">
+        <%= f.date_select :deliver_date %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+      </div>
+      <div class="col-sm-10">
+        <%= f.submit %>
+      </div>
+    </div>
 <% end %>

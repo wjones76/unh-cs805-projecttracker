@@ -3,21 +3,21 @@
 one:
   task_name: MyString
   description: MyText
-  priority: 
+  priority: 1
   assigned_to: MyString
-  category: 
+  category: 1
   start_date: 2015-04-04
   end_date: 2015-04-04
   version: MyString
-  status: 
+  status: 1
 
 two:
   task_name: MyString
   description: MyText
-  priority: 
+  priority: 2
   assigned_to: MyString
-  category: 
+  category: 2
   start_date: 2015-04-04
   end_date: 2015-04-04
   version: MyString
-  status: 
+  status: 2

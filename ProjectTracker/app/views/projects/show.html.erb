@@ -1,54 +1,94 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Project name:</b>
-  <%= @project.project_name %>
-</p>
+<div class="row">
+  <div class="col-sm-2">
+     <b>Project name:</b>
+  </div>
+  <div class="col-sm-10">
+    <%= @project.project_name %>
+  </div>
+</div>
 
-<p>
+<div class="row">
+  <div class="col-sm-2">
   <b>Department:</b>
-  <%= @project.department %>
-</p>
+  </div>
+  <div class="col-sm-10">
+  <%= @project.department.department %>
+  </div>
+</div>
 
-<p>
+<div class="row">
+  <div class="col-sm-2">
   <b>Description:</b>
+  </div>
+  <div class="col-sm-10">
   <%= @project.description %>
-</p>
+  </div>
+</div>
 
-<p>
+<div class="row">
+  <div class="col-sm-2">
   <b>Return on investment:</b>
+  </div>
+  <div class="col-sm-10">
   <%= @project.return_on_investment %>
-</p>
+  </div>
+</div>
 
-<p>
+<div class="row">
+  <div class="col-sm-2">
   <b>Submitted by:</b>
+  </div>
+  <div class="col-sm-10">
   <%= @project.submitted_by %>
-</p>
+  </div>
+</div>
 
-<p>
+<div class="row">
+  <div class="col-sm-2">
   <b>Status:</b>
-  <%= @project.status %>
-</p>
+  </div>
+  <div class="col-sm-10">
+  <%= @project.status.status %>
+  </div>
+</div>
 
-<p>
+<div class="row">
+  <div class="col-sm-2">
   <b>Created on:</b>
+  </div>
+  <div class="col-sm-10">
   <%= @project.created_on %>
-</p>
+  </div>
+</div>
 
-<p>
+<div class="row">
+  <div class="col-sm-2">
   <b>Version:</b>
-  <%= @project.version %>
-</p>
+  </div>
+  <div class="col-sm-10">
+  <%= @project.version.version_name %>
+  </div>
+</div>
 
-<p>
+<div class="row">
+  <div class="col-sm-2">
   <b>Category:</b>
-  <%= @project.category %>
-</p>
+  </div>
+  <div class="col-sm-10">
+  <%= @project.category.category %>
+  </div>
+</div>
 
-<p>
+<div class="row">
+  <div class="col-sm-2">
   <b>Deliver date:</b>
+  </div>
+  <div class="col-sm-10">
   <%= @project.deliver_date %>
-</p>
+</div>
+</div>
 
 
 <%= link_to 'Edit', edit_project_path(@project) %> |

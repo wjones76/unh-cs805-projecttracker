@@ -1,95 +1,112 @@
 <p id="notice"><%= notice %></p>
 
 <div class="row">
-  <div class="col-sm-2">
-     <b>Project name:</b>
-  </div>
-  <div class="col-sm-10">
-    <%= @project.project_name %>
+  <div class="col-sm-12">
+    <h3 class="heading">Project: <%= @project.project_name %></h3>
   </div>
 </div>
 
 <div class="row">
   <div class="col-sm-2">
-  <b>Department:</b>
+    <b>Department:</b>
   </div>
-  <div class="col-sm-10">
-  <%= @project.department.department %>
+  <div class="col-sm-4">
+    <%= @project.department.department %>
+  </div>
+  <div class="col-sm-2">
+    <b>Status:</b>
+  </div>
+  <div class="col-sm-4">
+    <%= @project.status.status %>
   </div>
 </div>
 
 <div class="row">
   <div class="col-sm-2">
-  <b>Description:</b>
+    <b>Submitted by:</b>
   </div>
-  <div class="col-sm-10">
-  <%= @project.description %>
+  <div class="col-sm-4">
+    <%= @project.submitted_by %>
+  </div>
+  <div class="col-sm-2">
+    <b>Created on:</b>
+  </div>
+  <div class="col-sm-4">
+    <%= @project.created_on %>
   </div>
 </div>
 
 <div class="row">
   <div class="col-sm-2">
-  <b>Return on investment:</b>
+    <b>Description:</b>
   </div>
   <div class="col-sm-10">
-  <%= @project.return_on_investment %>
+    <%= @project.description %>
   </div>
 </div>
 
 <div class="row">
   <div class="col-sm-2">
-  <b>Submitted by:</b>
+    <b>Return on investment:</b>
   </div>
-  <div class="col-sm-10">
-  <%= @project.submitted_by %>
+  <div class="col-sm-4">
+    <%= @project.return_on_investment %>
+  </div>
+  <div class="col-sm-2">
+    <b>Version:</b>
+  </div>
+  <div class="col-sm-4">
+    <%= @project.version.version_name %>
   </div>
 </div>
 
 <div class="row">
   <div class="col-sm-2">
-  <b>Status:</b>
+    <b>Category:</b>
   </div>
-  <div class="col-sm-10">
-  <%= @project.status.status %>
+  <div class="col-sm-4">
+    <%= @project.category.category %>
   </div>
-</div>
-
-<div class="row">
   <div class="col-sm-2">
-  <b>Created on:</b>
+    <b>Deliver date:</b>
   </div>
-  <div class="col-sm-10">
-  <%= @project.created_on %>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-sm-2">
-  <b>Version:</b>
-  </div>
-  <div class="col-sm-10">
-  <%= @project.version.version_name %>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-sm-2">
-  <b>Category:</b>
-  </div>
-  <div class="col-sm-10">
-  <%= @project.category.category %>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-sm-2">
-  <b>Deliver date:</b>
-  </div>
-  <div class="col-sm-10">
   <%= @project.deliver_date %>
 </div>
+
+<div class="row">
+  <div class="col-sm-12">
+    <h3 class="heading"> Tasks </h3>
+  </div>
 </div>
 
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<div class="row">
+  <div class="col-sm-1">
+    Task Id
+  </div>
+  <div class="col-sm-3">
+    Task Name
+  </div>
+  <div class="col-sm-2">
+    Assigned To
+  </div>
+</div>
+<% @project.project_task.each do |task| %>
+    <div class="row">
+      <div class="col-sm-1">
+        <%= task.id %>
+      </div>
+      <div class="col-sm-3">
+        <%= link_to task.task_name, task %>
+      </div>
+      <div class="col-sm-2">
+        <%= task.assigned_to %>
+      </div>
+    </div>
+<% end %>
+<br />
+<div class="row">
+  <div class="col-sm-12">
+    <%= link_to 'Edit', edit_project_path(@project) %> |
+    <%= link_to 'Back', projects_path %>
+  </div>
+</div>

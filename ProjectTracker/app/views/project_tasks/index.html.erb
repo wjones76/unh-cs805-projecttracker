@@ -2,8 +2,16 @@
 
 <table>
   <tr>
+    <th>Task name</th>
+    <th>Description</th>
     <th>Project</th>
-    <th>Task</th>
+    <th>Priority</th>
+    <th>Assigned to</th>
+    <th>Category</th>
+    <th>Start date</th>
+    <th>End date</th>
+    <th>Version</th>
+    <th>Status</th>
     <th></th>
     <th></th>
     <th></th>
@@ -11,8 +19,16 @@
 
 <% @project_tasks.each do |project_task| %>
   <tr>
+    <td><%= project_task.task_name %></td>
+    <td><%= project_task.description %></td>
     <td><%= project_task.project %></td>
-    <td><%= project_task.task %></td>
+    <td><%= project_task.priority %></td>
+    <td><%= project_task.assigned_to %></td>
+    <td><%= project_task.category %></td>
+    <td><%= project_task.start_date %></td>
+    <td><%= project_task.end_date %></td>
+    <td><%= project_task.version %></td>
+    <td><%= project_task.status %></td>
     <td><%= link_to 'Show', project_task %></td>
     <td><%= link_to 'Edit', edit_project_task_path(project_task) %></td>
     <td><%= link_to 'Destroy', project_task, method: :delete, data: { confirm: 'Are you sure?' } %></td>

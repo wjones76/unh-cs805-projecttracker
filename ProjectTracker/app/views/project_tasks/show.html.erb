@@ -1,13 +1,53 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <b>Task name:</b>
+  <%= @project_task.task_name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @project_task.description %>
+</p>
+
+<p>
   <b>Project:</b>
   <%= @project_task.project %>
 </p>
 
 <p>
-  <b>Task:</b>
-  <%= @project_task.task %>
+  <b>Priority:</b>
+  <%= @project_task.priority %>
+</p>
+
+<p>
+  <b>Assigned to:</b>
+  <%= @project_task.assigned_to %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @project_task.category %>
+</p>
+
+<p>
+  <b>Start date:</b>
+  <%= @project_task.start_date %>
+</p>
+
+<p>
+  <b>End date:</b>
+  <%= @project_task.end_date %>
+</p>
+
+<p>
+  <b>Version:</b>
+  <%= @project_task.version %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @project_task.status %>
 </p>
 
 

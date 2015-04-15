@@ -11,9 +11,6 @@ ProjectTracker::Application.routes.draw do
   resources :workflows
 
 
-  resources :tasks
-
-
   resources :projects
 
 

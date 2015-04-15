@@ -55,4 +55,8 @@ Project.find_or_create_by_project_name(:project_name => 'Project Tracker for IT 
                                        :submitted_by => 'WJONES', :department_id => 1, :version_id => 1, :status_id=> 1, :category_id => 1)
 
 #task
-
+ProjectTask.find_or_create_by_task_name(:project_id => 1, :assigned_to=> 'WJONES', :description=> 'Task 1', :end_date => nil, :start_date => nil, :task_name => 'Create model', :version=> '0.1.0.0')
+ProjectTask.find_or_create_by_task_name(:project_id => 1, :assigned_to=> 'WJONES', :description=> 'Task 2', :end_date => nil, :start_date => nil, :task_name => 'Create scaffolding', :version => '')
+ProjectTask.find_or_create_by_task_name(:project_id => 1, :assigned_to=> 'WJONES', :description=> 'Task 3', :end_date => nil, :start_date => nil, :task_name => 'Create stylesheet', :version => '')
+ProjectTask.find_or_create_by_task_name(:project_id => 1, :assigned_to=> 'WJONES', :description=> 'Task 4', :end_date => nil, :start_date => nil, :task_name => 'Update application layout', :version => '')
+ProjectTask.find_or_create_by_task_name(:project_id => 1, :assigned_to=> 'WJONES', :description=> 'Task 5', :end_date => nil, :start_date => nil, :task_name => 'Create Seed file', :version => '')

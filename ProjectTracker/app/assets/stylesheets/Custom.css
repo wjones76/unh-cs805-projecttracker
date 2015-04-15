@@ -1,6 +1,12 @@
-.defaultTable > th,tr,td {
+.defaultTable > tbody > tr > th,td {
     padding: 10px;
     margin: 5px;
     border: solid 1px #000000;
-    background-color: lavender;
+    background-color: #faf2cc;
+}
+
+h3.heading {
+    background-color: #d3d3d3;
+    border-radius: 10px;
+    padding: 10px;
 }

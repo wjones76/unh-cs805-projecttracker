@@ -1,8 +1,9 @@
-class CreateTasks < ActiveRecord::Migration
+class CreateProjectTasks < ActiveRecord::Migration
   def change
-    create_table :tasks do |t|
+    create_table :project_tasks do |t|
       t.string :task_name, :limit => 120
       t.text :description
+      t.references :project
       t.references :priority
       t.string :assigned_to, :limit => 20
       t.references :category
@@ -13,8 +14,9 @@ class CreateTasks < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :tasks, :priority_id
-    add_index :tasks, :category_id
-    add_index :tasks, :status_id
+    add_index :project_tasks, :project_id
+    add_index :project_tasks, :priority_id
+    add_index :project_tasks, :category_id
+    add_index :project_tasks, :status_id
   end
 end

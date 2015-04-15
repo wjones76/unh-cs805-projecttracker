@@ -1,6 +1,6 @@
-<h1>Listing roles</h1>
+<h1>Roles</h1>
 
-<table>
+<table class="defaultTable">
   <tr>
     <th>Role name</th>
     <th>Description</th>
@@ -9,18 +9,18 @@
     <th></th>
   </tr>
 
-<% @roles.each do |role| %>
-  <tr>
-    <td><%= link_to role.role_name, role %></td>
-    <td><%= role.description %></td>
-    <td><%= role.created_by %></td>
-    <td><%= role.created_on %></td>
-    <td><%= link_to 'Edit', edit_role_path(role) %> |
-    <%= link_to 'Destroy', role, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+  <% @roles.each do |role| %>
+      <tr>
+        <td><%= link_to role.role_name, role %></td>
+        <td><%= role.description %></td>
+        <td><%= role.created_by %></td>
+        <td><%= role.created_on %></td>
+        <td><%= link_to 'Edit', edit_role_path(role) %> |
+          <%= link_to 'Destroy', role, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+      </tr>
+  <% end %>
 </table>
 
-<br />
+<br/>
 
 <%= link_to 'New Role', new_role_path %>

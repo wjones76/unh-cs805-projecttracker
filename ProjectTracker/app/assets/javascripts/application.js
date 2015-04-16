@@ -10,7 +10,31 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
+// = require dataTables/jquery.dataTables
 = require jquery
 = require jquery_ujs
 = require bootstrap-sprockets
 = require_tree .
+
+
+$(document).ready(function(){
+
+
+
+
+    $('.defaultTable').DataTable();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ });

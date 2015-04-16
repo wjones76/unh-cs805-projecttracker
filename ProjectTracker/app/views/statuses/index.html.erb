@@ -1,21 +1,22 @@
-<h1>Listing statuses</h1>
+<h1>Statuses</h1>
 
-<table>
+<table class="defaultTable">
   <tr>
     <th>Id</th>
     <th>Status</th>
     <th></th>
   </tr>
 
-<% @statuses.each do |status| %>
-  <tr>
-    <td><%= status.id %></td>
-    <td><%= link_to status.status, status %></td>
-    <td><%= link_to 'Edit', edit_status_path(status) %> | <%= link_to 'Destroy', status, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+  <% @statuses.each do |status| %>
+      <tr>
+        <td><%= status.id %></td>
+        <td><%= link_to status.status, status %></td>
+        <td><%= link_to 'Edit', edit_status_path(status) %>
+          | <%= link_to 'Destroy', status, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+      </tr>
+  <% end %>
 </table>
 
-<br />
+<br/>
 
 <%= link_to 'New Status', new_status_path %>

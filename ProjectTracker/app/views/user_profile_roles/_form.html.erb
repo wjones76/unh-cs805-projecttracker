@@ -1,29 +1,36 @@
 <%= form_for(@user_profile_role) do |f| %>
-  <% if @user_profile_role.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user_profile_role.errors.count, "error") %> prohibited this user_profile_role from being saved:</h2>
+    <% if @user_profile_role.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@user_profile_role.errors.count, "error") %> prohibited this user_profile_role from being
+            saved:</h2>
 
-      <ul>
-      <% @user_profile_role.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+          <ul>
+            <% @user_profile_role.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :role %><br/>
+      <%= f.text_field :role %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :role %><br />
-    <%= f.text_field :role %>
-  </div>
-  <div class="field">
-    <%= f.label :userprofile %><br />
-    <%= f.text_field :userprofile %>
-  </div>
-  <div class="field">
-    <%= f.label :created_on %><br />
-    <%= f.datetime_select :created_on %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="field">
+      <%= f.label :userprofile %><br/>
+      <%= f.text_field :userprofile %>
+    </div>
+    <div class="field">
+      <%= f.label :created_on %><br/>
+      <%= f.datetime_select :created_on %>
+    </div>
+    <div class="row">
+      <div class="col-sm-2">
+      </div>
+      <div class="col-sm-10">
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+      </div>
+    </div>
 <% end %>

@@ -1,6 +1,6 @@
-<h1>Listing user_profile_roles</h1>
+<h1>User Profile Roles</h1>
 
-<table>
+<table class="defaultTable">
   <tr>
     <th>Role</th>
     <th>User Profile</th>
@@ -8,18 +8,18 @@
     <th></th>
   </tr>
 
-<% @user_profile_roles.each do |user_profile_role| %>
-  <tr>
-    <td><%= user_profile_role.role %></td>
-    <td><%= user_profile_role.userprofile %></td>
-    <td><%= user_profile_role.created_on %></td>
-    <td><%= link_to 'Show', user_profile_role %></td>
-    <td><%= link_to 'Edit', edit_user_profile_role_path(user_profile_role) %></td>
-    <td><%= link_to 'Destroy', user_profile_role, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+  <% @user_profile_roles.each do |user_profile_role| %>
+      <tr>
+        <td><%= user_profile_role.role %></td>
+        <td><%= user_profile_role.userprofile %></td>
+        <td><%= user_profile_role.created_on %></td>
+        <td><%= link_to 'Show', user_profile_role %></td>
+        <td><%= link_to 'Edit', edit_user_profile_role_path(user_profile_role) %></td>
+        <td><%= link_to 'Destroy', user_profile_role, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+      </tr>
+  <% end %>
 </table>
 
-<br />
+<br/>
 
 <%= link_to 'New User profile role', new_user_profile_role_path %>

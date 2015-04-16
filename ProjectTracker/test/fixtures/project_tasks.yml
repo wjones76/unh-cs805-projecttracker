@@ -1,9 +1,25 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  project: 1
-  task: 1
+  task_name: MyString
+  description: MyText
+  project: 
+  priority: 
+  assigned_to: MyString
+  category: 
+  start_date: 2015-04-14
+  end_date: 2015-04-14
+  version: MyString
+  status: 
 
 two:
-  project: 1
-  task: 1
+  task_name: MyString
+  description: MyText
+  project: 
+  priority: 
+  assigned_to: MyString
+  category: 
+  start_date: 2015-04-14
+  end_date: 2015-04-14
+  version: MyString
+  status: 

@@ -1,4 +1,4 @@
-<h1>Listing projects</h1>
+<h1>Projects</h1>
 
 <table class="defaultTable">
   <tr>
@@ -10,20 +10,21 @@
     <th></th>
   </tr>
 
-<% @projects.each do |project| %>
-  <tr>
-    <td><%= link_to project.project_name , project %></td>
-    <td><%= project.department.department %></td>
-    <td><%= project.submitted_by %></td>
-    <td><%= project.status.status %></td>
-    <td><%= project.version.version_name %></td>
-    <td>
-      <%= link_to 'Edit', edit_project_path(project) %> | <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %>
-    </td>
-  </tr>
-<% end %>
+  <% @projects.each do |project| %>
+      <tr>
+        <td><%= link_to project.project_name, project %></td>
+        <td><%= project.department.department %></td>
+        <td><%= project.submitted_by %></td>
+        <td><%= project.status.status %></td>
+        <td><%= project.version.version_name %></td>
+        <td>
+          <%= link_to 'Edit', edit_project_path(project) %>
+          | <%= link_to 'Destroy', project, method: :delete, data: {confirm: 'Are you sure?'} %>
+        </td>
+      </tr>
+  <% end %>
 </table>
 
-<br />
+<br/>
 
 <%= link_to 'New Project', new_project_path %>

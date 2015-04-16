@@ -1,49 +1,55 @@
 <%= form_for(@userprofile) do |f| %>
-  <% if @userprofile.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@userprofile.errors.count, "error") %> prohibited this userprofile from being saved:</h2>
+    <% if @userprofile.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@userprofile.errors.count, "error") %> prohibited this userprofile from being saved:</h2>
 
-      <ul>
-      <% @userprofile.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+          <ul>
+            <% @userprofile.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field" style="display:none">
+      <%= f.label :id %><br/>
+      <%= f.text_field :id %>
     </div>
-  <% end %>
-
-  <div class="field" style="display:none">
-    <%= f.label :id %><br />
-    <%= f.text_field :id %>
-  </div>
-  <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name %>
-  </div>
-  <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
-  </div>
-  <div class="field">
-    <%= f.label :nt_login %><br />
-    <%= f.text_field :nt_login %>
-  </div>
-  <div class="field">
-    <%= f.label :department %><br />
-    <%= f.collection_select(:department_id, Department.all, :id, :department, prompt:true) %>
-  </div>
-  <div class="field">
-    <%= f.label :phone_number %><br />
-    <%= f.text_field :phone_number %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :job_title %><br />
-    <%= f.text_field :job_title %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="field">
+      <%= f.label :first_name %><br/>
+      <%= f.text_field :first_name %>
+    </div>
+    <div class="field">
+      <%= f.label :last_name %><br/>
+      <%= f.text_field :last_name %>
+    </div>
+    <div class="field">
+      <%= f.label :nt_login %><br/>
+      <%= f.text_field :nt_login %>
+    </div>
+    <div class="field">
+      <%= f.label :department %><br/>
+      <%= f.collection_select(:department_id, Department.all, :id, :department, prompt: true) %>
+    </div>
+    <div class="field">
+      <%= f.label :phone_number %><br/>
+      <%= f.text_field :phone_number %>
+    </div>
+    <div class="field">
+      <%= f.label :email %><br/>
+      <%= f.text_field :email %>
+    </div>
+    <div class="field">
+      <%= f.label :job_title %><br/>
+      <%= f.text_field :job_title %>
+    </div>
+    <div class="row">
+      <div class="col-sm-2">
+      </div>
+      <div class="col-sm-10">
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+      </div>
+    </div>
 <% end %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150404215735) do
+ActiveRecord::Schema.define(:version => 20150415005523) do
 
   create_table "categories", :force => true do |t|
     t.string   "category",   :limit => 30
@@ -38,14 +38,24 @@ ActiveRecord::Schema.define(:version => 20150404215735) do
   add_index "priorities", ["priority"], :name => "index_priorities_on_priority", :unique => true
 
   create_table "project_tasks", :force => true do |t|
+    t.string   "task_name",   :limit => 120
+    t.text     "description"
     t.integer  "project_id"
-    t.integer  "task_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "priority_id"
+    t.string   "assigned_to", :limit => 20
+    t.integer  "category_id"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.string   "version",     :limit => 20
+    t.integer  "status_id"
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
   end
 
+  add_index "project_tasks", ["category_id"], :name => "index_project_tasks_on_category_id"
+  add_index "project_tasks", ["priority_id"], :name => "index_project_tasks_on_priority_id"
   add_index "project_tasks", ["project_id"], :name => "index_project_tasks_on_project_id"
-  add_index "project_tasks", ["task_id"], :name => "index_project_tasks_on_task_id"
+  add_index "project_tasks", ["status_id"], :name => "index_project_tasks_on_status_id"
 
   create_table "projects", :force => true do |t|
     t.string   "project_name",         :limit => 120
@@ -86,24 +96,6 @@ ActiveRecord::Schema.define(:version => 20150404215735) do
   end
 
   add_index "statuses", ["status"], :name => "index_statuses_on_status", :unique => true
-
-  create_table "tasks", :force => true do |t|
-    t.string   "task_name",   :limit => 120
-    t.text     "description"
-    t.integer  "priority_id"
-    t.string   "assigned_to", :limit => 20
-    t.integer  "category_id"
-    t.date     "start_date"
-    t.date     "end_date"
-    t.string   "version",     :limit => 20
-    t.integer  "status_id"
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
-  end
-
-  add_index "tasks", ["category_id"], :name => "index_tasks_on_category_id"
-  add_index "tasks", ["priority_id"], :name => "index_tasks_on_priority_id"
-  add_index "tasks", ["status_id"], :name => "index_tasks_on_status_id"
 
   create_table "user_profile_roles", :force => true do |t|
     t.integer  "role_id"

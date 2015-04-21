@@ -13,10 +13,10 @@
   <% @projects.each do |project| %>
       <tr>
         <td><%= link_to project.project_name, project %></td>
-        <td><%= project.department.department %></td>
+        <td><%= project.department.department if project.department %></td>
         <td><%= project.submitted_by %></td>
-        <td><%= project.status.status %></td>
-        <td><%= project.version.version_name %></td>
+        <td><%= project.status.status  if project.status %></td>
+        <td><%= project.version.version_name if project.version %></td>
         <td>
           <%= link_to 'Edit', edit_project_path(project) %>
           | <%= link_to 'Destroy', project, method: :delete, data: {confirm: 'Are you sure?'} %>

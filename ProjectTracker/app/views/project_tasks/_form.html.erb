@@ -1,57 +1,106 @@
 <%= form_for(@project_task) do |f| %>
-  <% if @project_task.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@project_task.errors.count, "error") %> prohibited this project_task from being saved:</h2>
+    <% if @project_task.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@project_task.errors.count, "error") %> prohibited this project_task from being saved:</h2>
 
-      <ul>
-      <% @project_task.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+          <ul>
+            <% @project_task.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <%= f.label :task_name %>
+      </div>
+      <div class="col-sm-10">
+        <%= f.text_field :task_name %>
+      </div>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :task_name %><br />
-    <%= f.text_field :task_name %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :project %><br />
-    <%= f.text_field :project %>
-  </div>
-  <div class="field">
-    <%= f.label :priority %><br />
-    <%= f.text_field :priority %>
-  </div>
-  <div class="field">
-    <%= f.label :assigned_to %><br />
-    <%= f.text_field :assigned_to %>
-  </div>
-  <div class="field">
-    <%= f.label :category %><br />
-    <%= f.text_field :category %>
-  </div>
-  <div class="field">
-    <%= f.label :start_date %><br />
-    <%= f.date_select :start_date %>
-  </div>
-  <div class="field">
-    <%= f.label :end_date %><br />
-    <%= f.date_select :end_date %>
-  </div>
-  <div class="field">
-    <%= f.label :version %><br />
-    <%= f.text_field :version %>
-  </div>
-  <div class="field">
-    <%= f.label :status %><br />
-    <%= f.text_field :status %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="row">
+      <div class="col-sm-2">
+        <%= f.label :description %>
+      </div>
+      <div class="col-sm-10">
+        <%= f.text_area :description, :cols => 80, :rows => 5  %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-2">
+        <%= f.label :project %>
+      </div>
+      <div class="col-sm-10">
+        <%= f.collection_select(:project_id, Project.all, :id, :project_name, prompt: true) %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <%= f.label :priority %>
+      </div>
+      <div class="col-sm-10">
+        <%= f.collection_select(:priority_id, Priority.all, :id, :priority, prompt: true) %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <%= f.label :assigned_to %>
+      </div>
+      <div class="col-sm-10">
+        <%= f.text_field :assigned_to %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <%= f.label :category %>
+      </div>
+      <div class="col-sm-10">
+        <%= f.collection_select(:category_id, Category.all, :id, :category, prompt: true) %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <%= f.label :start_date %>
+      </div>
+      <div class="col-sm-10">
+        <%= f.text_field :start_date, :class => 'date-picker' %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <%= f.label :end_date %>
+      </div>
+      <div class="col-sm-10">
+        <%= f.text_field :end_date, :class => 'date-picker' %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <%= f.label :version %>
+      </div>
+      <div class="col-sm-10">
+        <%= f.text_field :version %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <%= f.label :status %>
+      </div>
+      <div class="col-sm-10">
+        <%= f.collection_select(:status_id, Status.all, :id, :status, prompt: true) %>
+      </div>
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
 <% end %>

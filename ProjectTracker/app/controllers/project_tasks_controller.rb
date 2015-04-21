@@ -46,6 +46,7 @@ class ProjectTasksController < ApplicationController
       if @project_task.save
         format.html { redirect_to @project_task, notice: 'Project task was successfully created.' }
         format.json { render json: @project_task, status: :created, location: @project_task }
+        UserMailer.assigned_email(@project_task).deliver
       else
         format.html { render action: "new" }
         format.json { render json: @project_task.errors, status: :unprocessable_entity }

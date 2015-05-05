@@ -1,5 +1,9 @@
-#header > p {
+.pCustom {
     margin: 0;
+}
+
+#login {
+    float: right;
 }
 
 .defaultTable > tbody > tr > th,td {
@@ -17,6 +21,7 @@
 
 #header{
     background: #8ADE52;
+    height: 75px;
 }
 
 #footer{

@@ -21,7 +21,7 @@
     <td><%= project_task.assigned_to %></td>
     <td><%= project_task.start_date %></td>
     <td><%= project_task.end_date %></td>
-    <td><%= project_task.version %></td>
+    <td><%= project_task.version.version_name %></td>
     <td><%= project_task.status %></td>
     <td><%= link_to 'Edit', edit_project_task_path(project_task) %> | <%= link_to 'Destroy', project_task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>

@@ -20,7 +20,7 @@
         <td><%= userprofile.nt_login %></td>
         <td><%= userprofile.department.department %></td>
         <td><%= userprofile.phone_number %></td>
-        <td><%= userprofile.email %></td>
+        <td><%= mail_to userprofile.email, userprofile.email  %></td>
         <td><%= userprofile.job_title %></td>
         <td><%= userprofile.created_on %></td>
         <td><%= link_to 'Edit', edit_userprofile_path(userprofile) %>
